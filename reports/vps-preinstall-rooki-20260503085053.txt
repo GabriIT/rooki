@@ -1,0 +1,23 @@
+=== Package/version precheck ===
+nginx installed: 1.24.0-2ubuntu7.7
+rsync installed: 3.2.7-1ubuntu1.2
+curl installed: 8.5.0-2ubuntu10.8
+git installed: 1:2.43.0-1ubuntu7.3
+dnsutils missing
+snapd installed: 2.73+ubuntu24.04.2
+certbot missing
+=== rooki domain conflicts ===
+=== enabled sites ===
+total 8
+drwxr-xr-x 2 root root 4096 Feb 22 15:10 .
+drwxr-xr-x 8 root root 4096 Apr 29 06:48 ..
+lrwxrwxrwx 1 root root   41 Feb 22 15:00 cn-flash-cards -> /etc/nginx/sites-available/cn-flash-cards
+=== available sites ===
+total 28
+drwxr-xr-x 2 root root 4096 Apr 29 06:48 .
+drwxr-xr-x 8 root root 4096 Apr 29 06:48 ..
+-rw-r--r-- 1 root root 3972 Apr 26 01:58 cn-flash-cards
+-rw-r--r-- 1 root root  384 Apr 25 12:37 cn-flash-cards.bak.20260425_123743
+-rw-r--r-- 1 root root  439 Apr 26 01:56 cn-flash-cards.bak.20260426_015652
+-rw-r--r-- 1 root root 3708 Apr 26 01:58 cn-flash-cards.bak.aliases.20260426_015814
+-rw-r--r-- 1 root root  724 Feb 19 01:37 default

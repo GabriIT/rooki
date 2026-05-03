@@ -1,0 +1,16 @@
+Checking for existing rooki.video Nginx server_name on remote...
+Creating remote release directory...
+Uploading dist...
+sending incremental file list
+./
+favicon.svg
+index.html
+rooki-og.svg
+assets/
+assets/index-ByWtyRRy.css
+assets/index-C5avQyOL.js
+
+sent 71,626 bytes  received 126 bytes  28,700.80 bytes/sec
+total size is 219,565  speedup is 3.06
+Activating release...
+Deployment complete: 20260503085323

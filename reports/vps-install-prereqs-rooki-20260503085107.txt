@@ -1,0 +1,60 @@
+Installing only missing VPS prerequisites for ROOKI static site...
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 https://deb.nodesource.com/node_22.x nodistro InRelease
+Get:3 https://pkgs.tailscale.com/stable/ubuntu noble InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 6581 B in 2s (2955 B/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+66 packages can be upgraded. Run 'apt list --upgradable' to see them.
+nginx already installed
+rsync already installed
+curl already installed
+git already installed
+Installing dnsutils
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  dnsutils
+0 upgraded, 1 newly installed, 0 to remove and 66 not upgraded.
+Need to get 3684 B of archives.
+After this operation, 31.7 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 dnsutils all 1:9.18.39-0ubuntu0.24.04.3 [3684 B]
+Fetched 3684 B in 0s (7740 B/s)
+Selecting previously unselected package dnsutils.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 118323 files and directories currently installed.)
+Preparing to unpack .../dnsutils_1%3a9.18.39-0ubuntu0.24.04.3_all.deb ...
+Unpacking dnsutils (1:9.18.39-0ubuntu0.24.04.3) ...
+Setting up dnsutils (1:9.18.39-0ubuntu0.24.04.3) ...
+snapd already installed
+Installing certbot via snap
+2026-05-03T02:51:46+02:00 INFO Waiting for automatic snapd restart...
+2026-05-03T02:51:47+02:00 INFO Waiting for automatic snapd restart...
+core 16-2.61.4-20260225 from Canonical** installed
+2026-05-03T02:52:14+02:00 INFO Waiting for automatic snapd restart...
+certbot 5.5.0 from Certbot Project (certbot-eff**) installed
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-04-29 06:48:17 CEST; 3 days ago
+       Docs: man:nginx(8)
+   Main PID: 546765 (nginx)
+      Tasks: 7 (limit: 14306)
+     Memory: 6.7M (peak: 11.3M)
+        CPU: 6.221s
+     CGroup: /system.slice/nginx.service
+             ├─546765 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─546768 "nginx: worker process"
+             ├─546769 "nginx: worker process"
+             ├─546770 "nginx: worker process"
+             ├─546771 "nginx: worker process"
+             ├─546772 "nginx: worker process"
+             └─546773 "nginx: worker process"
+
+Apr 29 06:48:17 vmi2876177 systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Apr 29 06:48:17 vmi2876177 systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Prerequisites completed.

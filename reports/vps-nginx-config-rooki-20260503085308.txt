@@ -1,0 +1,9 @@
+=== ROOKI Nginx setup precheck ===
+=== Backing up /etc/nginx before ROOKI change ===
+-rw-r--r-- 1 root root 6.9K May  3 02:53 /etc/nginx/rooki-backups/nginx-before-rooki-20260503025310.tar.gz
+=== Creating ROOKI web root ===
+=== Installing isolated ROOKI Nginx site ===
+=== Validating and reloading Nginx ===
+=== Installed ROOKI files ===
+-rw-r--r-- 1 root root 654 May  3 02:53 /etc/nginx/sites-available/rooki.video.conf
+lrwxrwxrwx 1 root root  43 May  3 02:53 /etc/nginx/sites-enabled/rooki.video.conf -> /etc/nginx/sites-available/rooki.video.conf

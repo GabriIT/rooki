@@ -1,0 +1,71 @@
+=== Backup before Certbot ===
+-rw-r--r-- 1 root root 16K May  3 02:54 /etc/nginx/rooki-backups/nginx-before-rooki-certbot-20260503025451.tar.gz
+=== Certbot version/plugins ===
+certbot 5.5.0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* apache
+Description: Apache Web Server plugin
+Interfaces: Authenticator, Installer, Plugin
+Entry point: EntryPoint(name='apache',
+value='certbot_apache._internal.entrypoint:ENTRYPOINT', group='certbot.plugins')
+
+* nginx
+Description: Nginx Web Server plugin
+Interfaces: Authenticator, Installer, Plugin
+Entry point: EntryPoint(name='nginx',
+value='certbot_nginx._internal.entrypoint:ENTRYPOINT', group='certbot.plugins')
+
+* standalone
+Description: Runs an HTTP server locally which serves the necessary validation
+files under the /.well-known/acme-challenge/ request path. Suitable if there is
+no HTTP server already running. HTTP challenge only (wildcards not supported).
+Interfaces: Authenticator, Plugin
+Entry point: EntryPoint(name='standalone',
+value='certbot._internal.plugins.standalone:Authenticator',
+group='certbot.plugins')
+
+* webroot
+Description: Saves the necessary validation files to a
+.well-known/acme-challenge/ directory within the nominated webroot path. A
+separate HTTP server must be running and serving files from the webroot path.
+HTTP challenge only (wildcards not supported).
+Interfaces: Authenticator, Plugin
+Entry point: EntryPoint(name='webroot',
+value='certbot._internal.plugins.webroot:Authenticator',
+group='certbot.plugins')
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+=== Issue certificate ===
+Account registered.
+Requesting a certificate for rooki.video and www.rooki.video
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/rooki.video/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/rooki.video/privkey.pem
+This certificate expires on 2026-07-31.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+
+Deploying certificate
+Successfully deployed certificate for rooki.video to /etc/nginx/sites-enabled/rooki.video.conf
+Successfully deployed certificate for www.rooki.video to /etc/nginx/sites-enabled/rooki.video.conf
+Congratulations! You have successfully enabled HTTPS on https://rooki.video and https://www.rooki.video
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+ * Donating to EFF:                    https://eff.org/donate-le
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+=== Validate Nginx after Certbot ===
+=== Certificate list ===
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: rooki.video
+    Serial Number: 6879239cb18c7453083172944f6b64bcf1a
+    Key Type: ECDSA
+    Identifiers: rooki.video www.rooki.video
+    Expiry Date: 2026-07-31 23:56:37+00:00 (VALID: 89 days)
+    Certificate Path: /etc/letsencrypt/live/rooki.video/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/rooki.video/privkey.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
