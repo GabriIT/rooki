@@ -1,0 +1,130 @@
+=== OS ===
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.3 LTS
+Release:	24.04
+Codename:	noble
+=== Kernel ===
+Linux vmi2876177 6.8.0-110-generic #110-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 19 15:09:20 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+=== Current user ===
+ubuntu
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo),100(users),988(docker)
+=== Disk ===
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.2G  3.1M  1.2G   1% /run
+/dev/sda1        96G   19G   78G  20% /
+tmpfs           5.9G  1.1M  5.9G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda16      881M  117M  703M  15% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           1.2G   12K  1.2G   1% /run/user/1000
+=== Memory ===
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       3.9Gi       6.1Gi        37Mi       2.0Gi       7.8Gi
+Swap:          4.0Gi          0B       4.0Gi
+=== Listening ports ===
+Netid State  Recv-Q Send-Q               Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                              
+udp   UNCONN 0      0                       127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=2272428,fd=16))                                                                                                                                                       
+udp   UNCONN 0      0                    127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=2272428,fd=14))                                                                                                                                                       
+udp   UNCONN 0      0                          0.0.0.0:41641      0.0.0.0:*    users:(("tailscaled",pid=743,fd=18))                                                                                                                                                                
+udp   UNCONN 0      0                             [::]:41641         [::]:*    users:(("tailscaled",pid=743,fd=17))                                                                                                                                                                
+tcp   LISTEN 0      4096                       0.0.0.0:587        0.0.0.0:*    users:(("docker-proxy",pid=1507838,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      4096                       0.0.0.0:995        0.0.0.0:*    users:(("docker-proxy",pid=438204,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                       0.0.0.0:993        0.0.0.0:*    users:(("docker-proxy",pid=438189,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                     127.0.0.1:8101       0.0.0.0:*    users:(("docker-proxy",pid=2461,fd=7))                                                                                                                                                              
+tcp   LISTEN 0      4096                     127.0.0.1:8102       0.0.0.0:*    users:(("docker-proxy",pid=2362,fd=7))                                                                                                                                                              
+tcp   LISTEN 0      4096                     127.0.0.1:8080       0.0.0.0:*    users:(("docker-proxy",pid=437297,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      511                        0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=546765,fd=5),("nginx",pid=436802,fd=5),("nginx",pid=436801,fd=5),("nginx",pid=436800,fd=5),("nginx",pid=436799,fd=5),("nginx",pid=436798,fd=5),("nginx",pid=436797,fd=5))       
+tcp   LISTEN 0      4096                       0.0.0.0:110        0.0.0.0:*    users:(("docker-proxy",pid=438162,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                100.109.69.104:54091      0.0.0.0:*    users:(("tailscaled",pid=743,fd=22))                                                                                                                                                                
+tcp   LISTEN 0      4096                       0.0.0.0:25         0.0.0.0:*    users:(("docker-proxy",pid=1507809,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      4096                       0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=1211466,fd=3),("systemd",pid=1,fd=101))                                                                                                                                          
+tcp   LISTEN 0      4096                       0.0.0.0:143        0.0.0.0:*    users:(("docker-proxy",pid=438176,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                       0.0.0.0:465        0.0.0.0:*    users:(("docker-proxy",pid=1507820,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      4096                     127.0.0.1:7654       0.0.0.0:*    users:(("docker-proxy",pid=3045247,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      511                        0.0.0.0:443        0.0.0.0:*    users:(("nginx",pid=546765,fd=17),("nginx",pid=436802,fd=17),("nginx",pid=436801,fd=17),("nginx",pid=436800,fd=17),("nginx",pid=436799,fd=17),("nginx",pid=436798,fd=17),("nginx",pid=436797,fd=17))
+tcp   LISTEN 0      4096                 127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=2272428,fd=15))                                                                                                                                                       
+tcp   LISTEN 0      4096                    127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=2272428,fd=17))                                                                                                                                                       
+tcp   LISTEN 0      4096                     127.0.0.1:13306      0.0.0.0:*    users:(("docker-proxy",pid=3045331,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      4096                     127.0.0.1:19991      0.0.0.0:*    users:(("docker-proxy",pid=438236,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                       0.0.0.0:4190       0.0.0.0:*    users:(("docker-proxy",pid=438223,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      200                        0.0.0.0:5432       0.0.0.0:*    users:(("postgres",pid=904,fd=6))                                                                                                                                                                   
+tcp   LISTEN 0      4096                     127.0.0.1:18100      0.0.0.0:*    users:(("docker-proxy",pid=2583,fd=7))                                                                                                                                                              
+tcp   LISTEN 0      4096                     127.0.0.1:18101      0.0.0.0:*    users:(("docker-proxy",pid=2293,fd=7))                                                                                                                                                              
+tcp   LISTEN 0      4096                     127.0.0.1:18200      0.0.0.0:*    users:(("docker-proxy",pid=2489,fd=7))                                                                                                                                                              
+tcp   LISTEN 0      4096                     127.0.0.1:18201      0.0.0.0:*    users:(("docker-proxy",pid=2656,fd=7))                                                                                                                                                              
+tcp   LISTEN 0      4096                     127.0.0.1:8443       0.0.0.0:*    users:(("docker-proxy",pid=437302,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                          [::]:587           [::]:*    users:(("docker-proxy",pid=1507849,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      4096                          [::]:995           [::]:*    users:(("docker-proxy",pid=438214,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                          [::]:993           [::]:*    users:(("docker-proxy",pid=438195,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      511                           [::]:80            [::]:*    users:(("nginx",pid=546765,fd=22),("nginx",pid=436802,fd=22),("nginx",pid=436801,fd=22),("nginx",pid=436800,fd=22),("nginx",pid=436799,fd=22),("nginx",pid=436798,fd=22),("nginx",pid=436797,fd=22))
+tcp   LISTEN 0      4096                          [::]:110           [::]:*    users:(("docker-proxy",pid=438168,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                          [::]:25            [::]:*    users:(("docker-proxy",pid=1507815,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      4096                          [::]:22            [::]:*    users:(("sshd",pid=1211466,fd=4),("systemd",pid=1,fd=102))                                                                                                                                          
+tcp   LISTEN 0      4096                          [::]:143           [::]:*    users:(("docker-proxy",pid=438183,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      4096                          [::]:465           [::]:*    users:(("docker-proxy",pid=1507830,fd=7))                                                                                                                                                           
+tcp   LISTEN 0      511                           [::]:443           [::]:*    users:(("nginx",pid=546765,fd=16),("nginx",pid=436802,fd=16),("nginx",pid=436801,fd=16),("nginx",pid=436800,fd=16),("nginx",pid=436799,fd=16),("nginx",pid=436798,fd=16),("nginx",pid=436797,fd=16))
+tcp   LISTEN 0      511                              *:3000             *:*    users:(("next-server (v1",pid=965,fd=21))                                                                                                                                                           
+tcp   LISTEN 0      4096   [fd7a:115c:a1e0::9501:45b4]:65520         [::]:*    users:(("tailscaled",pid=743,fd=23))                                                                                                                                                                
+tcp   LISTEN 0      4096                          [::]:4190          [::]:*    users:(("docker-proxy",pid=438229,fd=7))                                                                                                                                                            
+tcp   LISTEN 0      200                           [::]:5432          [::]:*    users:(("postgres",pid=904,fd=7))                                                                                                                                                                   
+tcp   LISTEN 0      511                              *:8103             *:*    users:(("next-server (v1",pid=974,fd=21))                                                                                                                                                           
+=== Web servers ===
+/usr/sbin/nginx
+apache2 not installed
+=== Docker / Dokku ===
+/usr/bin/docker
+Docker version 28.5.1, build e180ab8
+/usr/bin/docker
+NAMES                                        PORTS                                                                                                                                                                                                                                         STATUS
+mailcowdockerized-nginx-mailcow-1            127.0.0.1:8080->8080/tcp, 80/tcp, 127.0.0.1:8443->8443/tcp                                                                                                                                                                                    Up 47 hours
+mailcowdockerized-watchdog-mailcow-1                                                                                                                                                                                                                                                       Up 3 days
+mailcowdockerized-acme-mailcow-1                                                                                                                                                                                                                                                           Up 3 days
+mailcowdockerized-ofelia-mailcow-1                                                                                                                                                                                                                                                         Up 3 days
+mailcowdockerized-rspamd-mailcow-1                                                                                                                                                                                                                                                         Up 3 days
+mailcowdockerized-postfix-mailcow-1          0.0.0.0:25->25/tcp, [::]:25->25/tcp, 0.0.0.0:465->465/tcp, [::]:465->465/tcp, 0.0.0.0:587->587/tcp, [::]:587->587/tcp, 588/tcp                                                                                                                Up 23 hours
+mailcowdockerized-dovecot-mailcow-1          0.0.0.0:110->110/tcp, [::]:110->110/tcp, 0.0.0.0:143->143/tcp, [::]:143->143/tcp, 0.0.0.0:993->993/tcp, [::]:993->993/tcp, 0.0.0.0:995->995/tcp, [::]:995->995/tcp, 0.0.0.0:4190->4190/tcp, [::]:4190->4190/tcp, 127.0.0.1:19991->12345/tcp   Up 47 hours
+mailcowdockerized-php-fpm-mailcow-1          9000/tcp                                                                                                                                                                                                                                      Up 3 days
+mailcowdockerized-postfix-tlspol-mailcow-1                                                                                                                                                                                                                                                 Up 3 days
+mailcowdockerized-mysql-mailcow-1            127.0.0.1:13306->3306/tcp                                                                                                                                                                                                                     Up 3 days
+mailcowdockerized-clamd-mailcow-1                                                                                                                                                                                                                                                          Up 3 days (healthy)
+mailcowdockerized-redis-mailcow-1            127.0.0.1:7654->6379/tcp                                                                                                                                                                                                                      Up 3 days
+mailcowdockerized-sogo-mailcow-1                                                                                                                                                                                                                                                           Up 3 days
+mailcowdockerized-olefy-mailcow-1                                                                                                                                                                                                                                                          Up 3 days
+mailcowdockerized-memcached-mailcow-1        11211/tcp                                                                                                                                                                                                                                     Up 3 days
+mailcowdockerized-dockerapi-mailcow-1                                                                                                                                                                                                                                                      Up 3 days
+mailcowdockerized-unbound-mailcow-1          53/tcp, 53/udp                                                                                                                                                                                                                                Up 3 days (healthy)
+mailcowdockerized-netfilter-mailcow-1                                                                                                                                                                                                                                                      Up 3 days
+mymat2-ui                                    127.0.0.1:18201->80/tcp                                                                                                                                                                                                                       Up 9 days (healthy)
+mymat2-api                                   127.0.0.1:18200->8000/tcp                                                                                                                                                                                                                     Up 9 days (healthy)
+mymat-api                                    127.0.0.1:18100->8000/tcp                                                                                                                                                                                                                     Up 9 days (healthy)
+mymat-ui                                     127.0.0.1:18101->80/tcp                                                                                                                                                                                                                       Up 9 days (healthy)
+sentence-learning-game                       127.0.0.1:8102->8000/tcp                                                                                                                                                                                                                      Up 9 days
+image-words-game                             127.0.0.1:8101->8000/tcp                                                                                                                                                                                                                      Up 9 days
+dokku not installed
+=== Certbot ===
+/usr/bin/certbot
+certbot 5.5.0
+=== Existing Nginx server names ===
+	# server_names_hash_bucket_size 64;
+	# server_name_in_redirect off;
+  server_name _;
+    proxy_pass http://127.0.0.1:8101/;
+    proxy_pass http://127.0.0.1:8102/;
+    proxy_pass http://127.0.0.1:8103;
+    proxy_pass http://127.0.0.1:3000;
+    proxy_pass http://127.0.0.1:18100/api/;
+    proxy_pass http://127.0.0.1:18101/;
+    proxy_pass http://127.0.0.1:18200/api/;
+    proxy_pass http://127.0.0.1:18201/;
+  proxy_pass http://127.0.0.1:18080/api/;
+  proxy_pass http://127.0.0.1:18081/price-negotiation/;
+    server_name mail.rooki.video;
+        proxy_pass http://127.0.0.1:8080/Microsoft-Server-ActiveSync;
+        proxy_pass http://127.0.0.1:8080/;
+    server_name mail.rooki.video;
+    server_name rooki.video www.rooki.video;
+    root /var/www/rooki-intro/current;
+    server_name rooki.video www.rooki.video;
+=== DNS check ===
+154.12.245.254
+154.12.245.254

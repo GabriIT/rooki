@@ -1,0 +1,4 @@
+Checking for existing rooki.video Nginx server_name on remote...
+WARNING: rooki.video is already referenced outside the ROOKI Nginx config:
+/etc/nginx/sites-enabled/mail.rooki.video.conf:    server_name mail.rooki.video;
+/etc/nginx/sites-enabled/mail.rooki.video.conf:    server_name mail.rooki.video;

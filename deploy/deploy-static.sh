@@ -24,7 +24,17 @@ ssh "$REMOTE" '
 
   conflicts="$(sudo nginx -T 2>/dev/null | awk "
     /^# configuration file / { file=\$4; sub(\":$\", \"\", file) }
-    /server_name .*rooki\\.video/ && file !~ /^\\/etc\\/nginx\\/sites-(available|enabled)\\/rooki\\.video\\.conf$/ { print file \":\" \$0 }
+    /server_name/ {
+      line=\$0
+      sub(/#.*/, \"\", line)
+      gsub(/;/, \"\", line)
+      split(line, names, /[[:space:]]+/)
+      for (i in names) {
+        if ((names[i] == \"rooki.video\" || names[i] == \"www.rooki.video\") && file !~ /^\\/etc\\/nginx\\/sites-(available|enabled)\\/rooki\\.video\\.conf$/) {
+          print file \":\" \$0
+        }
+      }
+    }
   ")"
 
   if [ -n "$conflicts" ]; then
