@@ -1,0 +1,12 @@
+[Unit]
+Description=Apply ROOKI analytics retention policy monthly
+
+[Timer]
+OnCalendar=*-*-01 03:10:00 UTC
+Persistent=true
+RandomizedDelaySec=10m
+Unit=rooki-analytics-purge.service
+
+[Install]
+WantedBy=timers.target
+

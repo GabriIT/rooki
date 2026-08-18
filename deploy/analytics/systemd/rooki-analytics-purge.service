@@ -1,0 +1,11 @@
+[Unit]
+Description=Purge ROOKI analytics data older than 13 months
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/rooki-analytics/purge.sh
+User=root
+Group=root
+

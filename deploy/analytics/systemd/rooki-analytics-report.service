@@ -1,0 +1,16 @@
+[Unit]
+Description=Send ROOKI weekly website analytics report
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/rooki-analytics/report.py --send
+User=root
+Group=root
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/etc/rooki-newsletter.env /etc/rooki-analytics-report.env /opt/rooki-analytics/report.py
+

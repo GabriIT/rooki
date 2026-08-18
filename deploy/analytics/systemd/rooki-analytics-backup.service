@@ -1,0 +1,11 @@
+[Unit]
+Description=Create encrypted ROOKI analytics database backup
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/rooki-analytics/backup.sh
+User=root
+Group=root
+

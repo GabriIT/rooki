@@ -45,11 +45,17 @@ Thumbs.db
 vps-audit-before-rooki.txt
 vps-audit-after-rooki.txt
 *.tar.gz
+*.sql
+*.sql.gz
+*.sql.gz.enc
+*credentials*.txt
 
 # Test and coverage output
 coverage/
 playwright-report/
 test-results/
+__pycache__/
+*.py[cod]
 
 # Package manager caches
 .npm/

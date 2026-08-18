@@ -6,7 +6,7 @@ Static introduction website for ROOKI Stage 1.
 
 ## Current stage
 
-Marketing / validation website only. No backend, no database, no login, and no upload system.
+Marketing / validation website with two isolated support services: newsletter email delivery and private, first-party traffic analytics. There is no public account, upload, or application database.
 
 ## Tech stack
 
@@ -16,6 +16,7 @@ Marketing / validation website only. No backend, no database, no login, and no u
 - Global CSS
 - Static build served by Nginx
 - SSL via Certbot / Let's Encrypt
+- Self-hosted Umami analytics with an isolated PostgreSQL container
 
 Use Node.js 24 LTS locally for development and production builds.
 
@@ -50,6 +51,7 @@ src/content/      Centralized website copy and founder/contact data
 src/styles/       Global visual system and responsive CSS
 public/           Favicon and Open Graph image
 deploy/           VPS audit, install, Nginx, deploy, and rollback scripts
+deploy/analytics/ Analytics stack, reporting, backup, retention, and recovery tools
 ```
 
 ## Content source
@@ -309,3 +311,124 @@ Do not stop existing services until you understand what they serve.
 ### Existing Dokku detected
 
 Do not modify Dokku apps or global Dokku Nginx templates. Keep ROOKI isolated in its own Nginx site config only after confirming no domain conflict.
+
+## Visitor analytics
+
+ROOKI uses a private Umami deployment for cookie-free, first-party traffic statistics. The tracker runs only on `rooki.video` and `www.rooki.video`, respects Do Not Track, and does not collect form values, newsletter email addresses, custom click events, heatmaps, or session replays.
+
+The anonymous visitor salt rotates monthly. Unique and returning visitor numbers are estimates within the current month, not permanent person identities. Analytics data is retained for 13 months; encrypted backups are retained for 14 days.
+
+### First installation
+
+Confirm DNS first:
+
+```bash
+dig +short stats.rooki.video A
+# Expected: 154.12.245.254
+```
+
+Run the complete conflict-checking installer from the repository root:
+
+```bash
+chmod +x deploy/analytics/*.sh
+./deploy/analytics/deploy-analytics.sh contabo-night
+```
+
+The installer refuses an occupied port `18340` or an existing `stats.rooki.video` Nginx server. It backs up the live ROOKI config, runs `nginx -t`, reloads Nginx, issues TLS, initializes Umami, and installs maintenance timers. Generated dashboard credentials remain on the VPS:
+
+```bash
+ssh contabo-night
+sudo cat /root/rooki-analytics-credentials.txt
+```
+
+After installation, place the displayed website ID in the deferred tracker tag in `index.html`, build, and deploy the static site:
+
+```bash
+npm run build
+./deploy/deploy-static.sh contabo-night
+```
+
+### Normal operation
+
+```bash
+ssh contabo-night
+cd /opt/rooki-analytics
+sudo docker compose ps
+curl -fsS http://127.0.0.1:18340/api/heartbeat
+sudo systemctl list-timers 'rooki-analytics-*'
+sudo journalctl -u rooki-analytics-report.service -n 50 --no-pager
+```
+
+Dashboard: `https://stats.rooki.video`. It uses two separate security layers:
+
+1. Enter the **Nginx Basic Auth** user and password in the browser's native authentication dialog. This protects access to the dashboard pages at the web-server level. Browsers normally remember it until the browser session is closed.
+2. On the Umami login page, enter the separate **Umami** user and password. This creates the application session used to read analytics data and change dashboard settings.
+
+Both credential sets are stored in `/root/rooki-analytics-credentials.txt`. Do not enter the Nginx password in the Umami login form or the Umami password in the browser dialog.
+
+After login, open **Websites**, select **ROOKI**, and choose the date range in the top-right control. The overview shows visitors, visits, pageviews, bounce rate, and visit duration. The lower panels provide pages, referrers, countries, browsers, operating systems, and devices. Visitor and returning-visitor values are anonymous estimates, and recognition resets with the monthly salt rotation.
+
+To leave Umami, use the account menu and select **Logout**. Basic Auth has no dashboard logout button; close all browser windows or clear saved site authentication for `stats.rooki.video` to force the browser dialog to appear again.
+
+The installation and static deployment commands above are not normal dashboard startup commands. Umami starts automatically through Docker, and the website is already deployed. Run `npm run build` and `./deploy/deploy-static.sh contabo-night` only after changing the public website or its tracker tag.
+
+Weekly reports are sent every Monday at 08:00 Europe/Rome to:
+
+```text
+lorenzo.marciandi@rooki.video
+admin@rooki.video
+```
+
+Preview or send a report manually:
+
+```bash
+sudo python3 /opt/rooki-analytics/report.py
+sudo python3 /opt/rooki-analytics/report.py --send
+```
+
+### Backup and restore
+
+```bash
+sudo /opt/rooki-analytics/backup.sh
+sudo /opt/rooki-analytics/verify-backup.sh
+sudo ls -lh /var/backups/rooki-analytics
+
+# Destructive: replaces the current analytics database.
+sudo /opt/rooki-analytics/restore.sh \
+  /var/backups/rooki-analytics/<backup>.sql.gz.enc --confirm
+```
+
+The encryption key is stored only at `/etc/rooki-analytics-backup.key`. Backups cannot be restored without it.
+
+### Retention and maintenance
+
+Run the 13-month purge manually:
+
+```bash
+sudo /opt/rooki-analytics/purge.sh
+```
+
+Before upgrading Umami, create and verify a backup. Update only the pinned Umami image digest in `/opt/rooki-analytics/docker-compose.yml`, then validate the isolated stack:
+
+```bash
+cd /opt/rooki-analytics
+sudo ./backup.sh
+sudo ./verify-backup.sh
+sudo docker compose pull
+sudo docker compose up -d
+sudo docker compose ps
+curl -fsS http://127.0.0.1:18340/api/heartbeat
+```
+
+### Pause and rollback
+
+To pause new collection without stopping the dashboard, remove the analytics snippet include from the live ROOKI Nginx config, run `sudo nginx -t`, and reload Nginx. Restore the timestamped backup created beside `/etc/nginx/sites-available/rooki.video.conf` to roll back Nginx changes.
+
+To stop only analytics:
+
+```bash
+cd /opt/rooki-analytics
+sudo docker compose stop
+```
+
+This does not stop Nginx, mailcow, the newsletter endpoint, host PostgreSQL, or any other VPS application.

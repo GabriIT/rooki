@@ -153,6 +153,10 @@ const renderedPageMarkup = pageMarkup
   .replace(
     "su scala di campionato. Affianchiamo report tecnici per giocatori e staff: dati di partita, momenti chiave, analisi individuali.",
     "su scala di campionato.",
+  )
+  .replace(
+    '<span>2026</span>\n      </div>',
+    '<span>2026</span>\n        <span class="sep"></span>\n        <a href="/privacy.html">Privacy</a>\n      </div>',
   );
 
 const newsletterPopupMarkup = `

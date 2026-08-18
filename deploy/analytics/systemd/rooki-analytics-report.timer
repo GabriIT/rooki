@@ -1,0 +1,12 @@
+[Unit]
+Description=Send ROOKI analytics report every Monday
+
+[Timer]
+OnCalendar=Mon *-*-* 08:00:00 Europe/Rome
+Persistent=true
+RandomizedDelaySec=5m
+Unit=rooki-analytics-report.service
+
+[Install]
+WantedBy=timers.target
+
