@@ -7,13 +7,13 @@ const pageMarkup = "<svg class=\"grain\" aria-hidden=\"true\" xmlns=\"http://www
 const resultsSectionMarkup = `
       <div class="results-block reveal">
         <div class="results-head">
-          <h3>I numeri di Mastercage, in campo dal vivo.</h3>
-          <span class="results-note">Dashboard Instagram &middot; ultimi 30 giorni &middot; dati reali</span>
+          <h3>I numeri che abbiamo generato.</h3>
+          <span class="results-note">Dashboard Instagram &middot; Luglio 2026 &middot; @rooki.video</span>
         </div>
         <div class="dash">
           <div class="dash-hero">
             <div class="dash-hero-val" data-count-to="92564">0</div>
-            <div class="dash-hero-lbl">Visualizzazioni totali &middot; ultimi 30 giorni</div>
+            <div class="dash-hero-lbl">Visualizzazioni generate &middot; luglio 2026</div>
           </div>
           <div class="dash-stats">
             <div class="dash-stat">
@@ -117,7 +117,91 @@ const resultsSectionMarkup = `
             <div class="highlight-cap">Toronto vs Miami</div>
           </div>
         </div>
+      </div>
+
+      <div class="quote-block reveal">
+        <blockquote>Andata molto bene per essere una prima esperienza. Grazie a voi per il grande impegno e la <em>precisione</em>.</blockquote>
+        <div class="meta">
+          <div class="lbl">Il feedback</div>
+          <div class="who">Alberto Riva</div>
+          <div class="role">Organizzatore e founder Mastercage &middot; Estate 2026</div>
+        </div>
       </div>`;
+
+const pricingSectionMarkup = `
+  <section id="prezzi">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Costi</span>
+          <h2 style="margin-top:18px;">Inizia con <span class="accent">Rooki.</span></h2>
+        </div>
+        <p class="lead">
+          Un abbonamento, tutta la stagione coperta. Più lungo è l'impegno,
+          più bassa è la tariffa per partita.
+        </p>
+      </div>
+
+      <div class="from">
+        <span class="k">A partire da</span>
+        <span class="v">100€</span>
+        <span class="u">al mese · fino a 5 partite</span>
+        <div class="incl">
+          <span><b>1 highlight</b>&nbsp;da 3–4 min per partita</span>
+          <span><b>2–3 clip verticali</b>&nbsp;per partita</span>
+          <span>Consegna&nbsp;<b>entro 24 ore</b></span>
+        </div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="deliv-row">
+          <div class="body">
+            <div class="nm">Mensile</div>
+            <div class="desc">Massima flessibilità: si disdice quando vuoi. Per provare il servizio su poche giornate.</div>
+          </div>
+          <div class="qty">1 mese<span class="sub">Senza vincolo</span></div>
+        </div>
+        <div class="deliv-row tier-2">
+          <div class="body">
+            <div class="nm">Semestrale</div>
+            <div class="desc">Copre il girone d'andata o di ritorno per intero, senza rinnovi da gestire a metà stagione.</div>
+          </div>
+          <div class="qty">6 mesi<span class="sub">Tariffa ridotta</span></div>
+        </div>
+        <div class="deliv-row tier-3">
+          <span class="tier-badge">Più scelto</span>
+          <div class="body">
+            <div class="nm">Annuale</div>
+            <div class="desc">L'intera stagione, dalla prima giornata ai playoff. Il piano scelto dalla maggior parte delle società.</div>
+          </div>
+          <div class="qty">12 mesi<span class="sub">Tariffa ridotta</span></div>
+        </div>
+        <div class="deliv-row tier-4">
+          <span class="tier-badge">Miglior tariffa</span>
+          <div class="body">
+            <div class="nm">Biennale</div>
+            <div class="desc">Due stagioni consecutive, archivio storico incluso. La tariffa per partita più bassa.</div>
+          </div>
+          <div class="qty">24 mesi<span class="sub">Tariffa minima</span></div>
+        </div>
+      </div>
+
+      <div class="terms">
+        <span class="term">Telecamera intelligente a noleggio,&nbsp;<strong>se ti serve</strong></span>
+      </div>
+
+      <div class="hero-meta">
+        <a class="btn primary lg" href="mailto:lorenzo.marciandi@rooki.video?subject=Prezzi%20ROOKI">
+          Scrivici per i prezzi
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+        </a>
+        <a class="btn wa lg" href="https://wa.me/393518388744?text=Ciao%20Rooki%2C%20vorrei%20info%20per%20la%20mia%20societ%C3%A0" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-2.88-.6-2.24-1.02-3.65-3.36-3.76-3.51-.11-.16-.9-1.2-.9-2.28 0-1.09.57-1.62.77-1.84.2-.22.44-.28.58-.28.14 0 .29 0 .41.01.13 0 .31-.05.48.37.17.42.6 1.47.65 1.58.05.11.09.24.02.39-.07.15-.14.24-.28.4-.14.16-.29.3-.4.4-.11.11-.24.23-.1.46.14.23.62 1.02 1.33 1.65.91.81 1.68 1.06 1.92 1.18.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.6-.18 1.28Z"></path></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>`;
 
 const mobileMenuMarkup = `
 <div id="nav-mobile-menu" aria-hidden="true">
@@ -125,19 +209,33 @@ const mobileMenuMarkup = `
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="M6 6l12 12"></path></svg>
   </button>
   <nav class="mob-nav-links" aria-label="Sezioni mobile">
-    <a href="#estate" class="mob-link" data-mobile-menu-link data-idx="0">Estate 2026</a>
-    <a href="#dove-andiamo" class="mob-link" data-mobile-menu-link data-idx="1">Dove andiamo</a>
-    <a href="#faq" class="mob-link" data-mobile-menu-link data-idx="2">FAQ</a>
+    <a href="#ricevi" class="mob-link" data-mobile-menu-link data-idx="0">Cosa ricevi</a>
+    <a href="#mastercage" class="mob-link" data-mobile-menu-link data-idx="1">Mastercage</a>
+    <a href="#prezzi" class="mob-link" data-mobile-menu-link data-idx="2">Costi</a>
     <a href="#chi-siamo" class="mob-link" data-mobile-menu-link data-idx="3">Chi siamo</a>
-    <a href="#en" class="mob-link" data-mobile-menu-link data-idx="4">EN</a>
+    <a href="#dove-andiamo" class="mob-link" data-mobile-menu-link data-idx="4">Dove andiamo</a>
+    <a href="#faq" class="mob-link" data-mobile-menu-link data-idx="5">FAQ</a>
+    <a href="#en" class="mob-link" data-mobile-menu-link data-idx="6">EN</a>
   </nav>
-  <a href="mailto:lorenzo.marciandi@rooki.video?subject=Ciao%20Rooki" class="mob-cta btn primary" data-mobile-menu-link>
-    Scrivici
-    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+  <a href="https://wa.me/393518388744?text=Ciao%20Rooki%2C%20vorrei%20info%20per%20la%20mia%20societ%C3%A0" class="mob-cta btn primary" target="_blank" rel="noopener" data-mobile-menu-link>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-2.88-.6-2.24-1.02-3.65-3.36-3.76-3.51-.11-.16-.9-1.2-.9-2.28 0-1.09.57-1.62.77-1.84.2-.22.44-.28.58-.28.14 0 .29 0 .41.01.13 0 .31-.05.48.37.17.42.6 1.47.65 1.58.05.11.09.24.02.39-.07.15-.14.24-.28.4-.14.16-.29.3-.4.4-.11.11-.24.23-.1.46.14.23.62 1.02 1.33 1.65.91.81 1.68 1.06 1.92 1.18.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.6-.18 1.28Z"></path></svg>
+    Scrivici su WhatsApp
   </a>
 </div>`;
 
 const renderedPageMarkup = pageMarkup
+  .replace(
+    /<nav class="nav-links" aria-label="Sezioni">[\s\S]*?<\/nav>/,
+    `<nav class="nav-links" aria-label="Sezioni">
+      <a href="#ricevi" data-nav="ricevi">Cosa ricevi</a>
+      <a href="#mastercage" data-nav="mastercage">Mastercage</a>
+      <a href="#prezzi" data-nav="prezzi">Costi</a>
+      <a href="#chi-siamo" data-nav="chi-siamo">Chi siamo</a>
+      <a href="#dove-andiamo" data-nav="dove-andiamo">Dove andiamo</a>
+      <a href="#faq" data-nav="faq">FAQ</a>
+      <a href="#en" data-nav="en">EN</a>
+    </nav>`,
+  )
   .replace(
     /<button class="nav-hamburger"[\s\S]*?<\/button>/,
     `<button class="nav-hamburger" type="button" aria-label="Menu" aria-controls="nav-mobile-menu" aria-expanded="false" data-mobile-menu-toggle>
@@ -146,14 +244,85 @@ const renderedPageMarkup = pageMarkup
     </button>`,
   )
   .replace(/<div id="nav-mobile-menu"[\s\S]*?<\/div>\n\n<main id="top">/, `${mobileMenuMarkup}\n\n<main id="top">`)
+  .replace("Stiamo costruendo · Varese 2026", "Stagione regolare 2026/27 · Varese")
+  .replace(
+    `Trasformiamo i video delle partite di basket in <strong>highlights e clip social pronti in 24 ore</strong>,
+        usando una pipeline AI costruita su misura. Pallavolo e calcio arrivano dopo — iniziamo dal basket.`,
+    `Trasformiamo le riprese delle tue partite di basket in <strong>highlights e clip social pronti in 24 ore</strong>.
+        Pipeline AI, consegna su cloud. Scrivici — inizia oggi.`,
+  )
+  .replace(
+    "mailto:lorenzo.marciandi@rooki.video?subject=Vorrei%20provare%20Rooki%20con%20una%20partita",
+    "mailto:lorenzo.marciandi@rooki.video?subject=Prezzi%20ROOKI",
+  )
+  .replace("Mandaci una partita di prova", "Scrivici per i prezzi")
+  .replace("costruendo gli strumenti che mancano, un torneo alla volta.", "costruendo gli strumenti che mancano, una società alla volta.")
+  .replace("Pronto per YouTube e per il canale del torneo.", "Pronto per YouTube e per il canale della società.")
+  .replace("Il permesso di riprendere al campo.", "Il permesso di usare le clip come vetrina.")
+  .replace("Tutta la produzione video gratuita durante la stagione estiva.", "Tutta la produzione video: highlights e clip social, ogni partita.")
+  .replace("File pronti al download, senza watermark Rooki.", "File pronti al download.")
+  .replace("<!-- ============== COSA FACCIAMO QUEST'ESTATE ============== -->", "<!-- ============== COSA ABBIAMO FATTO ============== -->")
+  .replace('<section id="estate">', '<section id="mastercage">')
+  .replace("Cosa facciamo quest'estate", "Il primo torneo")
+  .replace("L'estate 2026,<br>sui campi, <span style=\"color:var(--accent);\">gratuita.</span>", "Abbiamo iniziato<br>dalla <span style=\"color:var(--accent);\">Mastercage.</span>")
+  .replace(
+    `Un'estate, un torneo di basket. Mandiamo le riprese, riceviamo
+          highlights e clip social pronti — senza fee, senza contratti.`,
+    `Estate 2026, Varese. Il nostro primo test reale: riprese vere, consegne vere,
+          feedback vero. I numeri parlano da soli.`,
+  )
+  .replace("Vai al torneo →", "Guarda il torneo →")
+  .replace(
+    `
+      <div class="specs-strip">
+        <div class="spec">
+          <div class="spec-val">≤ 24h</div>
+          <div class="spec-lbl">Consegna highlights e clip</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">AI</div>
+          <div class="spec-lbl">Pipeline che riconosce i momenti chiave</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val accent">0€</div>
+          <div class="spec-lbl">Gratuito, solo durante l'estate</div>
+        </div>
+      </div>`,
+    "",
+  )
   .replace(
     '\n    </div>\n  </section>\n\n  <!-- ============== CHI SIAMO ============== -->',
-    `${resultsSectionMarkup}\n    </div>\n  </section>\n\n  <!-- ============== CHI SIAMO ============== -->`,
+    `${resultsSectionMarkup}\n    </div>\n  </section>\n\n${pricingSectionMarkup}\n\n  <!-- ============== CHI SIAMO ============== -->`,
   )
+  .replace("Parla con gli organizzatori, chiude gli accordi", "Parla con le società, chiude gli accordi")
+  .replace('<article class="phase active">\n          <div class="head">\n            <span>Fase 01 · Estate 2026</span>\n            <span class="status">In corso</span>', '<article class="phase">\n          <div class="head">\n            <span>Fase 01 · Estate 2026</span>\n            <span class="status">Completata</span>')
+  .replace("Costruiamo<br>la prova.", "Abbiamo costruito<br>la prova.")
+  .replace("Tornei estivi di alto livello — Mastercage confermato per il basket — con produzione video gratuita e consegna in 24 ore. Dimostriamo che il modello regge prima di scalare.", "Estate 2026, Mastercage: tornei di alto livello, produzione video e consegna in 24 ore. La prova che il modello funziona — fatta, con i numeri a supporto.")
+  .replace('<article class="phase">\n          <div class="head">\n            <span>Fase 02 · 2026 — 2027</span>\n            <span class="status">Prossimo passo</span>', '<article class="phase active">\n          <div class="head">\n            <span>Fase 02 · 2026 — 2027</span>\n            <span class="status">In corso</span>')
   .replace(
     "su scala di campionato. Affianchiamo report tecnici per giocatori e staff: dati di partita, momenti chiave, analisi individuali.",
-    "su scala di campionato.",
+    "su scala di campionato. Servizio a pagamento, piani su misura.",
   )
+  .replace(
+    `Le domande che ci fanno gli organizzatori al primo contatto. Se ne hai altre,
+          scrivici — rispondiamo entro un giorno.`,
+    `Hai una società di basket e vuoi capire come funziona?
+          Parliamoci — rispondiamo entro 24 ore.`,
+  )
+  .replace(
+    "Il servizio è disponibile gratuitamente solo durante la stagione estiva 2026, per gli organizzatori dei tornei selezionati (Mastercage è già confermato per il basket). Fuori stagione il modello cambia: nessuna fee nascosta, nessun abbonamento. In cambio chiediamo feedback e il permesso di usare il lavoro come vetrina.",
+    "Offriamo piani mensili, semestrali, annuali e biennali, senza costi di attivazione e senza fee nascoste. Il prezzo dipende dal numero di partite e dalla durata dell'accordo: scrivici e ti diciamo qual è il piano giusto per la tua società.",
+  )
+  .replace("in tempo per i social del torneo.", "in tempo per i social della società.")
+  .replace("Per voi organizzatori cambia una cosa sola", "Per voi cambia una cosa sola")
+  .replace("sceglamo le inquadrature migliori", "scegliamo le inquadrature migliori")
+  .replace('<span class="lbl">Phase 1 — Now</span>', '<span class="lbl">Phase 2 — Now</span>')
+  .replace(
+    "This summer we're working with high-level amateur tournaments for free. We receive the raw footage, we return the content. No cost, no commitment.",
+    "Phase 1 is complete: we proved the model at the Mastercage tournament in summer 2026. We now work with clubs through the regular season on monthly, six-month, annual and two-year plans — no setup fee, no camera crew needed.",
+  )
+  .replace("If you're a tournament organiser, a sports federation", "If you're a club, a tournament organiser, a sports federation")
+  .replace("Una mail ogni tanto: tornei in arrivo, dietro le quinte, dove ci trovi.", "Una mail ogni tanto: novità dai campi, dietro le quinte, dove ci trovi.")
   .replace(
     '<span>2026</span>\n      </div>',
     '<span>2026</span>\n        <span class="sep"></span>\n        <a href="/privacy.html">Privacy</a>\n      </div>',
@@ -172,7 +341,7 @@ const newsletterPopupMarkup = `
     <button type="button" class="nl-close" aria-label="Chiudi" data-newsletter-popup-close>&times;</button>
     <div class="nl-eyebrow">Newsletter · Società &amp; Atleti</div>
     <h4 class="nl-title">Resta nel <span>giro.</span></h4>
-    <p class="nl-text">Sei una società, un atleta o semplicemente ami lo sport? Una mail ogni tanto: tornei in arrivo, opportunità, dietro le quinte. Niente spam, mai.</p>
+    <p class="nl-text">Sei una società, un atleta o semplicemente ami lo sport? Una mail ogni tanto: novità dai campi, opportunità, dietro le quinte. Niente spam, mai.</p>
     <form data-newsletter-popup-form novalidate>
       <input type="email" placeholder="la@tuaemail.it" aria-label="La tua email">
       <button type="submit" class="btn primary">
