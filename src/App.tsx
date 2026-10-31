@@ -123,7 +123,7 @@ const resultsSectionMarkup = `
         <blockquote>Andata molto bene per essere una prima esperienza. Grazie a voi per il grande impegno e la <em>precisione</em>.</blockquote>
         <div class="meta">
           <div class="lbl">Il feedback</div>
-          <div class="who">Alberto Riva</div>
+          <div class="who">Alberto Riganti</div>
           <div class="role">Organizzatore e founder Mastercage &middot; Estate 2026</div>
         </div>
       </div>`;
